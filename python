@@ -1,0 +1,21 @@
+import sys
+
+def regular_loop(data):
+    """Regular loop that creates a new list within the loop."""
+    result = []
+    for item in data:
+        result.append(item * 2)  # Example operation
+    return result
+
+# Sample data (adjust size for memory impact)
+data = list(range(1000000))  # 1 million integers
+
+# Measure memory usage before and after
+memory_before = sys.getsizeof(data)
+result = regular_loop(data)
+memory_after = sys.getsizeof(result)
+
+print("Regular Loop Memory Usage:")
+print(f"Before: {memory_before} bytes")
+print(f"After: {memory_after} bytes")
+print(f"Difference: {memory_after - memory_before} bytes\n")
